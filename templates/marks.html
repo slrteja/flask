@@ -1,0 +1,20 @@
+{%extends "base.html" %}
+{%block content%}
+<h1 class="center">Create a Account</h1>
+        <form name="marks_form">
+            <label for="Maths">Maths</label>
+            <input type="number" name="Maths" class="field-input" required>
+
+            <label for="Science">Science</label>
+            <input type="number" name="Science" class="field-input" required> 
+
+            <label for="Social">Social</label>
+            <input type="number" name="Social" class="field-input" required>
+
+            <p class="success success-hidden"></p>
+            <p class="error error-hidden"></p>
+            
+            
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+{%endblock%}

@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+
+{%block content%}
+<table class="table table-striped table-bordered table-hover">
+    <tr class="table-responsive table-hover">
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Modify</th>
+    </tr>
+    <tr>
+        <td>
+            {{session['user']['name']}}<br>
+        </td>
+        <td>
+            {{session['user']['email']}}<br>
+        </td>
+        <td>
+            <button type="button" class="btn">Edit</button>
+        </td>
+    </tr>
+
+
+
+</table>
+
+
+{%endblock%}
