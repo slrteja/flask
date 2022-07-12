@@ -1,7 +1,6 @@
 from functools import wraps
 from flask import Flask, redirect,render_template,redirect,session
 import pymongo
-from regex import R
 
 app=Flask(__name__)
 app.secret_key="abcdefghijklmnopqrstuvwxy"
