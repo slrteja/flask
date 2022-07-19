@@ -39,24 +39,18 @@ def delete(id):
     teja.delete_one({"_id": ObjectId(id)})
     return redirect(url_for('index'))
 
-# ...
-@app.post('/update/')
-def put(id,name, email, gender):
-    
-        
-    teja.find_one_and_update({"email": email},{"$set": {"name": name, "email": email,"gender": gender}},upsert=True)
-    return redirect(url_for('index'))
 
 #...
 
-@app.route('/edit/')
+@app.route('/update/',methods=['POST','GET'])
 def edit():
-    if request.method=='POST':
-        id= request.form['_id']
-        uname = request.form['name']
-        uemail=request.form['email']
-        ugender = request.form['gender']
-    return  render_template('/edit.html')
+    print (request.form)
+    name=request.form.get('name')
+    email=request.form.get('email')
+    gender=request.form.get('gender')
+    teja.update_one({"email": email},{"$set": {"name": name ,"gender": gender}})       
+    return render_template('edit.html')
+
 
 if __name__ == "__main__":
     app.run(debug=true)
