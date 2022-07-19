@@ -4,13 +4,8 @@
 
 <h1>Form</h1>
 <hr>
-<form method="post">
-    <p>
-        <b><label for="_id">ID </label></b>
-    </p>
-    <p>
-        <input type="text" name="_id"placeholder="ID">
-    </p>
+<form method="POST" enctype="multipart/form-data">
+   
     <p>
         <b><label for="name">Name </label></b>
     </p>
@@ -35,12 +30,10 @@
         <input id="gender-1" name="gender" required type="radio" value="Female">
         <label for="gender-1">Female</label>
         <br>
-    </form>
-
-<form method="POST" action="{{ url_for('update', id=data['_id'],name=data['name']),email=data['email'] ,gender=data['gender']}}" >
     <p>
-        <input type="submit" value="update">
+        <input type="submit" value="submit">
     </p>
 </form>
+<a href="/">Home</a>
 
 {% endblock  %}}
